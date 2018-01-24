@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-security-core
+  datasource:
+    username: root
+    password: feng
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8
+    hikari:
+      maximum-pool-size: 50
+      max-lifetime: 30000
+      minimum-idle: 5
+      connection-timeout: 60000
+      connectionTestQuery: SELECT 1
+
+server:
+  port: 8080
