@@ -1,5 +1,6 @@
 package com.feng.controller;
 
+import com.feng.exception.MyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.ui.ModelMap;
@@ -44,6 +45,11 @@ public class UserController {
         ModelMap modelMap = new ModelMap();
         modelMap.addAllAttributes(queryForMap);
         return modelMap;
+    }
+
+    @GetMapping("/testError")
+    public ModelMap testError(){
+        throw new MyException("testErrorMsg");
     }
 
 }
