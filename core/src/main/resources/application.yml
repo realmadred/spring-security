@@ -5,13 +5,29 @@ spring:
     username: root
     password: feng
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=true
     hikari:
       maximum-pool-size: 50
       max-lifetime: 30000
       minimum-idle: 5
       connection-timeout: 60000
       connectionTestQuery: SELECT 1
-
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 256
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+        useLocalSessionState: true
+        useLocalTransactionState: true
+        rewriteBatchedStatements: true
+        cacheResultSetMetadata: true
+        cacheServerConfiguration: true
+        elideSetAutoCommits: true
+        maintainTimeStats: false
 server:
   port: 8080
+
+security:
+  basic:
+    enabled: false
