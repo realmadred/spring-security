@@ -12,6 +12,7 @@
         <module>api</module>
         <module>core</module>
         <module>app</module>
+        <module>security</module>
     </modules>
 
     <parent>
